@@ -10,7 +10,7 @@ class Vector_nd():          #создаем класс
     def __add__(self, other):           #функция сложения двух векторов
         result = []
         for i in range(len(self._cords)):
-            sum1 = self._cords[i] + other._cords
+            sum1 = self._cords[i] + other._cords[i]
             result.append(sum1)
         return Vector_nd(*result)
     
@@ -31,7 +31,7 @@ class Vector_nd():          #создаем класс
     def __sub__(self, other):           #функция разности двух векторов
         result = []
         for i in range(len(self._cords)):
-            sum2= self._cords[i] - other._cords
+            sum2= self._cords[i] - other._cords[i]
             result.append(sum2)
         return Vector_nd(*result)
     

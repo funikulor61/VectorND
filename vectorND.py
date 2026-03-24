@@ -53,7 +53,8 @@ class Vector_nd():          #создаем класс
         sum3 = 0
         for i in range(len(self._cords)):
             sum3 += self._cords[i] ** 2
-        return sum3 ** 0.5
+        length = sum3 ** 0.5
+        return length
 
     def __eq__(self, other):                #функция сравнения векторов
         return self._cords == other._cords
@@ -81,11 +82,11 @@ class Vector_nd():          #создаем класс
         return hash(st)
     
     def norm(self):             #функция для нормализованного(единичного) вектора
-        spis = ()
-        spis += (-1 * self._cords[1], self._cords[0], )
-        for i in range(2, len(self._cords)):
-            spis += (0, )
-        return Vector_nd(spis)
+        result = []
+        for i in range(len(self._cords)):
+            division = self._cords[i] / self.__abs__()
+            result.append(division)
+        return Vector_nd(*result)
 
 
 
@@ -132,6 +133,5 @@ print(v1[0])
 print(v1.dot(v5))
 
 print(v1.norm())
-
 
 """

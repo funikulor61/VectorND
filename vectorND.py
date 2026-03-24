@@ -77,8 +77,8 @@ class Vector_nd():          #создаем класс
             return Vector_nd(sp)
     
     def hash(self):                             #функция хэширования
-        s = " ".join(str(x) for x in self._cords) 
-        return hash(s)
+        st = " ".join(str(x) for x in self._cords) 
+        return hash(st)
     
     def norm(self):             #функция для нормализованного(единичного) вектора
         spis = ()
@@ -89,29 +89,49 @@ class Vector_nd():          #создаем класс
 
 
 
-"""    
+"""
 v = Vector_nd([10, 20, 30])
 for x in v:
     print(x)
+
 
 
 v1 = Vector_nd(1, 2, 3, 4, 5, 6)
 
 v5 = Vector_nd(1,2,3,4,5,6)
 v7 = Vector_nd(2,3,4,5,6,6)
+
+
+a = v1.hash()
+b = v5.hash()
+c = v7.hash()
+print(a)
+print(set([a, b ,c]))
+
+v11 = v1 + v5
+v12 = v1 - v5
+print(v11, v12)
+
 v2 = v1.__neg__()
 print(v2)
+
 v3 = v1.__abs__()
 print(v3)
+
 v4 = v1 / 0.5
 print(v4)
+
 v6 = v1.__len__()
 print(v6)
+
 print(v1 == v5)
+
 print(v1[1:3])
 print(v1[0])
+
 print(v1.dot(v5))
+
 print(v1.norm())
-print(hash(v1) == hash(v5))
-print(set([v1,v5,v7]))
-"""    
+
+
+"""
